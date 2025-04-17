@@ -50,24 +50,3 @@ def add_return():
         return jsonify({'message': 'Return record added successfully'}), 201
     except Exception as e:
         return jsonify({'error': str(e)}), 500
-from flask import Blueprint, request, jsonify
-import pymysql
-from app.config import Config
-
-bp = Blueprint('returns', __name__, url_prefix='/returns')
-
-@bp.route('/fetch', methods=['GET'])
-def fetch_returns():
-    try:
-        connection = pymysql.connect(
-            host=Config.MYSQL_HOST,
-            user=Config.MYSQL_USER,
-            password=Config.MYSQL_PASSWORD,
-            database=Config.MYSQL_DB
-        )
-        cursor = connection.cursor()
-        cursor.execute("SELECT * FROM returns_data LIMIT 10;")
-        result = cursor.fetchall()
-        return jsonify(result)
-    except Exception as e:
-        return jsonify({'error': str(e)})
