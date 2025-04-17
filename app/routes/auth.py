@@ -11,6 +11,6 @@ def login():
     password = data.get('password')
     
     # Replace with real DB check later
-    if username == 'admin' and password == 'password':
+    if username == 'admin' and password == 'Huboo123456789':
         return jsonify({'message': 'Login successful', 'role': 'admin'})
     return jsonify({'message': 'Invalid credentials'}), 401

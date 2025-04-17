@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scan Return</title>
+</head>
+<body>
+    <h1>Returns Scanner</h1>
+    <form method="POST" action="/returns">
+        <label for="order_id">Order ID:</label>
+        <input type="text" id="order_id" name="order_id" required><br><br>
+
+        <label for="return_reason">Return Reason:</label>
+        <input type="text" id="return_reason" name="return_reason"><br><br>
+
+        <label for="return_status">Return Status:</label>
+        <input type="text" id="return_status" name="return_status"><br><br>
+
+        <label for="returned_to_hub">Returned to Hub:</label>
+        <input type="text" id="returned_to_hub" name="returned_to_hub"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
